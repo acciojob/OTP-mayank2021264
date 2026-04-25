@@ -3,6 +3,8 @@ let inputArr = document.querySelectorAll('.code');
 console.log(inputArr);
 
 inputArr.forEach((item) => {
+	inputArr[0].focus();
+
 	item.addEventListener('input', focusNext);
 	item.addEventListener('keydown', focusBack);
 });
@@ -10,7 +12,7 @@ inputArr.forEach((item) => {
 function focusNext(){
 	let arr = [...inputArr];
 	let currIndex = arr.indexOf(this);
-
+	
 	if(this.value !== "" && currIndex < arr.length-1){
 		arr[currIndex+1].focus();
 	}
